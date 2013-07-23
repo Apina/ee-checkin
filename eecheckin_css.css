@@ -1,0 +1,39 @@
+/***********************************************************************
+*
+* This needs to be added to the wp-content/uploads/espresso folder.
+*
+* Some of this isnt applicable currently, needs work.
+*
+* Created by Dean Robinson - this isn't endorsed or supported by Event Espresso - use at your own risk!
+*
+* 
+*
+******/
+
+
+.dr_checkout {
+  /*
+	background-color:#F00 !important;
+	background-image:none !important;
+	color:#FFF !important;
+	*/
+}
+.dr_checkin {
+background: #a9db80 !important;
+background: -moz-linear-gradient(top,  #a9db80 0%, #96c56f 100%) !important;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a9db80), color-stop(100%,#96c56f)) !important;
+background: -webkit-linear-gradient(top,  #a9db80 0%,#96c56f 100%) !important;
+background: -o-linear-gradient(top,  #a9db80 0%,#96c56f 100%) !important;
+background: -ms-linear-gradient(top,  #a9db80 0%,#96c56f 100%) !important;
+background: linear-gradient(to bottom,  #a9db80 0%,#96c56f 100%) !important;
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9db80', endColorstr='#96c56f',GradientType=0 ) !important;
+	color:#FFF !important;
+
+}
+
+#checkinmessage {
+	background-color:red;
+	color:white;
+	padding:5px;
+	display:none;
+}
