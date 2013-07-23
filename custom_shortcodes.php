@@ -11,10 +11,9 @@
 ******/
 
 
-
 if (!function_exists('ee_checkin')) {
 
-  function ee_checkin($event_id='NULL', $event_identifier='NULL', $category_identifier='NULL', $show_gravatar='false', $show_expired='false', $show_secondary='false', $show_deleted='false', $show_recurrence='true', $limit='0', $paid_only='false', $sort_by='last name') {
+	function ee_checkin($event_id='NULL', $event_identifier='NULL', $category_identifier='NULL', $show_gravatar='false', $show_expired='false', $show_secondary='false', $show_deleted='false', $show_recurrence='true', $limit='0', $paid_only='false', $sort_by='last name') {
 		
 		global $this_event_id;
 		
