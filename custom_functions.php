@@ -9,7 +9,6 @@
 ******/
 
 
-
 /**
  * Adds the WordPress Ajax Library to the frontend.
  */
@@ -30,7 +29,7 @@ function add_ajax_library() {
 
 
 function eecheckin_loadscripts() {
-  
+	
 	$uploadpath = wp_upload_dir();
 	 
 	wp_enqueue_script('eecheckin', $uploadpath['baseurl'] . '/espresso/eecheckin.js');
@@ -224,6 +223,7 @@ if (!function_exists('ee_checkin_list')) {
                         <th></th>
                         <th></th>
                         <th>Checked/Max</th>
+                        <th></th>
                         </tr>
             
 				<?php
@@ -253,6 +253,7 @@ if (!function_exists('ee_checkin_list')) {
                         <td><input type="button" data-nonce="<?php echo $nonce; ?>" class="dr_checkin" value="Check In" id="<?php echo $id ?>|<?php echo $reg_id ?>" /></td>
                         <td><input type="button" data-nonce="<?php echo $nonce; ?>" class="dr_checkout" value="Check Out" id="<?php echo $id ?>|<?php echo $reg_id ?>" /></td>
                         <td id="ac_<?php echo $reg_id ?>"><?php echo $attendeecount; ?></td>
+                        <td class="eecheckin_status" ><span id="status_<?php echo $reg_id ?>"></span></td>
                         </tr>
 				<?php
 					}
