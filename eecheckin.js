@@ -29,7 +29,7 @@ jQuery('.dr_checkin').click(function() {
 		};  
 
 		jQuery.post(ajaxurl, data, function(response) {
-			console.log(response);
+			//console.log(response);
 			var obj = jQuery.parseJSON(response);
 			
 			jQuery('#'+container_id).append("<p id='checkinmessage"+container_id+"'></p>");
