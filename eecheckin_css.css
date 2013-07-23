@@ -12,7 +12,7 @@
 
 
 .dr_checkout {
-  /*
+	/*
 	background-color:#F00 !important;
 	background-image:none !important;
 	color:#FFF !important;
@@ -31,9 +31,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9db80', end
 
 }
 
-#checkinmessage {
+.checkinmessage {
 	background-color:red;
 	color:white;
 	padding:5px;
 	display:none;
 }
+
+.eecheckin_status {
+	width:32px;
+	max-width:32px;
+}
+
