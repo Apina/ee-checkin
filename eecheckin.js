@@ -9,15 +9,18 @@
 ******/
 
 
+
 jQuery(document).ready(function($) {
 
 
 
 jQuery('.dr_checkin').click(function() {
 
-  	nonce = jQuery(this).attr("data-nonce");
+		nonce = jQuery(this).attr("data-nonce");
 
 		var gettheid = jQuery(this).attr('id');
+					//console.log(gettheid);
+
 		var container_id = jQuery(this).parent().parent().parent().parent().attr("id");
 		
 		var data = { 
@@ -32,19 +35,21 @@ jQuery('.dr_checkin').click(function() {
 			//console.log(response);
 			var obj = jQuery.parseJSON(response);
 			
-			jQuery('#'+container_id).append("<p id='checkinmessage"+container_id+"'></p>");
+			var message = obj.message;
+			var status_id = obj.regid;
+			
+			var status;
+			
+			if(message == "Attendee Checked In") { status = "OK"}
+			if(message == "Max. checked in") { status = "MAX"}
 
-			jQuery('#checkinmessage'+container_id).empty();
-			jQuery('#checkinmessage'+container_id).text(obj.message).css("display", "block");
-			jQuery('#ac_'+obj.regid).empty()
-			jQuery('#ac_'+obj.regid).text(obj.chckedin_quan + "/"+ obj.tck_quan);
-			jQuery('#checkinmessage'+container_id).delay(5000).fadeOut();
-setTimeout(function() {
-  jQuery('#checkinmessage'+container_id).remove();
-}, 6000);
+jQuery('#ac_'+obj.regid).empty()
+jQuery('#ac_'+obj.regid).text(obj.chckedin_quan + "/"+ obj.tck_quan);
 
-
-//console.log(obj.chckedin_quan + "/"+ obj.tck_quan);
+			jQuery('#status_'+ status_id).fadeIn();
+			jQuery('#status_'+ status_id).html(status);
+			jQuery('#status_'+ status_id).delay(3000).fadeOut();
+	
 		}); 
 		
 });
@@ -53,6 +58,7 @@ setTimeout(function() {
 
 //CHECKOUT
 jQuery('.dr_checkout').click(function() {
+
 
 		nonce = jQuery(this).attr("data-nonce");
 
@@ -69,23 +75,29 @@ jQuery('.dr_checkout').click(function() {
 		};  
 		
 		jQuery.post(ajaxurl, data, function(response) {
+			//console.log(response);
+
 			var obj = jQuery.parseJSON(response);
 
-			jQuery('#'+container_id).append("<p id='checkinmessage"+container_id+"'></p>");
+			var message = obj.message;
+			var status_id = obj.regid;
+			
+			var status;
+			
+			if(message == "Attendee Checked OUT") { status = "OUT"};
+			if(message == "Cant go below zero!") { status = "ERR"};
 
-			jQuery('#checkinmessage'+container_id).empty();
-			//jQuery('#checkinmessage'+container_id).empty();
-			jQuery('#checkinmessage'+container_id).text(obj.message).css("display", "block");
-			jQuery('#ac_'+obj.regid).empty()
-			jQuery('#ac_'+obj.regid).text(obj.chckedin_quan + "/"+ obj.tck_quan);
-			jQuery('#checkinmessage'+container_id).delay(5000).fadeOut();
-setTimeout(function() {
-  jQuery('#checkinmessage'+container_id).remove();
-}, 6000);
-		}); 
-		
+jQuery('#ac_'+obj.regid).empty()
+jQuery('#ac_'+obj.regid).text(obj.chckedin_quan + "/"+ obj.tck_quan);
+			
+			jQuery('#status_'+ status_id).fadeIn();
+			jQuery('#status_'+ status_id).html(status);
+			jQuery('#status_'+ status_id).delay(3000).fadeOut();
+
+
+
 });
-
+});
 
 
 });
