@@ -48,7 +48,7 @@ jQuery('#ac_'+obj.regid).text(obj.chckedin_quan + "/"+ obj.tck_quan);
 
 			jQuery('#status_'+ status_id).fadeIn();
 			jQuery('#status_'+ status_id).html(status);
-			jQuery('#status_'+ status_id).delay(3000).fadeOut();
+			jQuery('#status_'+ status_id).fadeOut();
 	
 		}); 
 		
@@ -92,7 +92,7 @@ jQuery('#ac_'+obj.regid).text(obj.chckedin_quan + "/"+ obj.tck_quan);
 			
 			jQuery('#status_'+ status_id).fadeIn();
 			jQuery('#status_'+ status_id).html(status);
-			jQuery('#status_'+ status_id).delay(3000).fadeOut();
+			jQuery('#status_'+ status_id).fadeOut();
 
 
 
